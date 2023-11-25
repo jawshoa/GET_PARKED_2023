@@ -398,7 +398,7 @@ print('Boolean List Values for Parking Availability: $booleanParkingDataList');
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 5),
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 6),
                   child: Text(
                     'CHW Lot 1',
                     style: TextStyle(
