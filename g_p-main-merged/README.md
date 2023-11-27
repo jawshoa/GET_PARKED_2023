@@ -24,8 +24,11 @@ flutter pub get
 ```
 
 
-##Help
-eef
+## Running the app 
+Once the dependencies are installed, you can run your Flutter app using:
+```
+flutter run
+```
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
