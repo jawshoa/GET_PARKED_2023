@@ -13,7 +13,9 @@ import 'package:geolocator/geolocator.dart';
 
 
 class Map extends StatefulWidget {
-  const Map({super.key});
+  final List<bool> booleanParkingDataList;
+
+  const Map({required this.booleanParkingDataList});
   @override
 
   State<Map> createState() => _MapState();
@@ -136,7 +138,31 @@ class _MapState extends State<Map> {
                             icon: BitmapDescriptor.defaultMarkerWithHue(30.0),
 
                             onTap: () {
-                              _showPISE(context, 'CHW lot1');
+                                showModalBottomSheet(
+      context: context,
+      builder: (builder) {
+        return Container(
+          height: 200,
+          child: Column(
+            children: [
+              ListTile(
+                title: Text('CHW Lot 1'),
+                subtitle: Text("Number of parking stalls and other information"),
+              ),
+              const SizedBox(height: 60),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => chwlot1(
+                    booleanParkingDataList: widget.booleanParkingDataList,
+                  )));
+                },
+                child: Text('Go to PISE Lot'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
                             },
                             position: PISElot),
 
@@ -204,12 +230,6 @@ class _MapState extends State<Map> {
 
 
 
-  void _navigateToPISE(BuildContext context, String lotName) {
-    // Implement logic to navigate to another page here
-    // For example:
-     Navigator.push(context, MaterialPageRoute(builder: (context) => chwlot1()));
-
-  }
 
     void _navigateToFront(BuildContext context, String lotName) {
     // Implement logic to navigate to another page here
@@ -307,31 +327,6 @@ void _showFront (BuildContext context, String lotName) {
     );
   }
 
-  void _showPISE(BuildContext context, String lotName) {
-  showModalBottomSheet(
-      context: context,
-      builder: (builder) {
-        return Container(
-          height: 200,
-          child: Column(
-            children: [
-              ListTile(
-                title: Text(lotName),
-                subtitle: Text("Number of parking stalls and other information"),
-              ),
-              const SizedBox(height: 60),
-              ElevatedButton(
-                onPressed: () {
-                  _navigateToPISE(context, lotName);
-                },
-                child: Text('Go to PISE Lot'),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
 
   void _showPISE2(BuildContext context, String lotName) {
   showModalBottomSheet(

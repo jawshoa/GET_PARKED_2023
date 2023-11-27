@@ -145,6 +145,7 @@ class Home_Screen extends StatelessWidget {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
+              //  Navigator.push(context, MaterialPageRoute(builder: (context) => chwlot1())); ///wtf is tech lot?
                 
               },
               child: ClipRRect(

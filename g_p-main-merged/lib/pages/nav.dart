@@ -17,7 +17,7 @@ class _NavState extends State<Nav> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     Home_Screen(),
-    Map(),
+    Map(booleanParkingDataList: []),
     Settings1NotificationsWidget(),
     TTNDataPage(),
   ];

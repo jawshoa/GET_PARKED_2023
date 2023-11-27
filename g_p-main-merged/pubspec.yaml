@@ -50,6 +50,7 @@ dependencies:
   ini: '>=1.0.0'
   test: '>=0.12.0'
   introduction_screen: ^3.1.12
+  riverpod: ^2.4.8
 
 
   

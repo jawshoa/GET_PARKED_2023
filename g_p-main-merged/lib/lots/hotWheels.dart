@@ -3,9 +3,8 @@ import 'package:g_p/format/LotLayout.dart';
 import 'package:flexible/flexible.dart';
 import 'package:g_p/pages/dataTesting.dart';
 
-
-class chwlot1 extends StatelessWidget {
-   chwlot1({required this.booleanParkingDataList});
+class hotWheels extends StatelessWidget {
+   hotWheels({required this.booleanParkingDataList});
 
    ParkingLot? parkingLot = ParkingLot(
      lotName: "Default Lot",
@@ -20,9 +19,6 @@ class chwlot1 extends StatelessWidget {
    double imageWidth = 1920;
    int rotation = 0;
 
-   int countAvailable = 0;
-   int countOccupied = 0;
-
    
    List<bool> booleanParkingDataList = [];
 
@@ -31,20 +27,10 @@ class chwlot1 extends StatelessWidget {
    @override
  Widget build(BuildContext context) {
 
-
      if (MediaQuery.of(context).orientation == Orientation.portrait ){
        rotation = 0;
      }else{
        rotation = 1;
-     }
-
-     for (bool value in booleanParkingDataList) {
-      if (value) {
-        // true
-        countAvailable++;
-      } else {
-        countOccupied++;
-      }
      }
 
     return Scaffold(
@@ -58,7 +44,6 @@ class chwlot1 extends StatelessWidget {
                 child: Column(
 
                   children: [
-
 
                    Container(
                      child: FutureBuilder<ParkingLot>(
@@ -115,7 +100,7 @@ decoration: BoxDecoration(
                   ),
                       ),
 
-                      Padding(
+                      const Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -150,7 +135,7 @@ decoration: BoxDecoration(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 8, 0, 8),
                                   child: Text(
-                                    '$countAvailable',
+                                    '50',
                                     style: TextStyle(
                                           fontFamily: 'Readex Pro',
                                           color: Color(0xFF5AEF39),
@@ -181,7 +166,7 @@ decoration: BoxDecoration(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 8, 0, 8),
                                   child: Text(
-                                    '$countOccupied',
+                                    '30',
                                     style: TextStyle(
                                           fontFamily: 'Readex Pro',
                                           color: Color(0xFFEF393C),
