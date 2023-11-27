@@ -34,14 +34,18 @@ class TTNDataPage extends StatefulWidget {
 }
 
 class _TTNDataPageState extends State<TTNDataPage> {
+
   final controller = TextEditingController();
   List<int> binaryList = [];
   //List<bool> booleanParkingDataList = [true,];
-  List<bool> booleanParkingDataList= [true,false,true,false,true,true,false,true,false,true,true,false,true,false,true,true,false,true,false,true,true,false,true,false,true,true,false,true,false,true,true,false,true,false,true,true,false,true,false,true,];
+  List<bool> booleanParkingDataList= [true, true, true, true,true,true,true, true, true, true, true,true,true, true,true,true,true,true,true,true,true,true,true,true,true,true,];
 
   List<bool> getBooleanParkingDataList() {
     return booleanParkingDataList;
   }
+
+
+
 
   late MqttServerClient client;
   String frmPayload = '';
@@ -177,6 +181,7 @@ class _TTNDataPageState extends State<TTNDataPage> {
       List<bool> booleanParkingDataList =
           binaryList.map((int value) => value == 1).toList();
 
+
       setState(() {
         this.frmPayload = frmPayload;
       });
@@ -190,12 +195,20 @@ class _TTNDataPageState extends State<TTNDataPage> {
       print('Boolean Data Binary List: $booleanParkingDataList');
 
       print('');
+
+      
+
+
+
+
+
     });
   }
 
   void onDisconnected() {
     print('Disconnected from TTN');
   }
+  
 
 //  @override
 //  Widget build(BuildContext context) {
@@ -224,12 +237,15 @@ class _TTNDataPageState extends State<TTNDataPage> {
 //}
 
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => 
+  Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
+            
             Text(
               'TTN Test',
               style: TextStyle(
@@ -247,6 +263,9 @@ class _TTNDataPageState extends State<TTNDataPage> {
           ],
         ),
       ),
+
+
+      
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 5),
         shrinkWrap: true,
@@ -260,14 +279,12 @@ class _TTNDataPageState extends State<TTNDataPage> {
 
               print(
                   'Boolean List Values for Parking Availability: $booleanParkingDataList');
+                  
             },
             child: Text('Show 4-bit Binary Data'),
           ),
 
-
-
-
-
+          
 
 
           Padding(
@@ -296,10 +313,10 @@ class _TTNDataPageState extends State<TTNDataPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(33),
                       child: Image.network(
-                        'https://storage.googleapis.com/getparked/CBA%20lot1.jpg',
-                        width: 425,
+                        'https://storage.googleapis.com/getparked/HotWheelsLot1.JPG',
+                        width: 410,
                         height: 141,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitWidth,
                       ),
                     ),
                   ),
@@ -309,7 +326,7 @@ class _TTNDataPageState extends State<TTNDataPage> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 5),
                         child: Text(
-                          'CBA Lot 1',
+                          'Hot Wheels Lot',
                           style: TextStyle(
                             fontFamily: 'Urbanist',
                             fontWeight: FontWeight.bold,
@@ -318,7 +335,7 @@ class _TTNDataPageState extends State<TTNDataPage> {
                       ),
                     ],
                   ),
-                  const Row(
+                 Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(

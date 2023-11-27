@@ -16,10 +16,9 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
-    Home_Screen(),
+    TTNDataPage(),
     Map(booleanParkingDataList: []),
     Settings1NotificationsWidget(),
-    TTNDataPage(),
   ];
 
 
@@ -43,6 +42,8 @@ class _NavState extends State<Nav> {
 
         
       ),
+
+      
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[                 // navigatoion bar items
           BottomNavigationBarItem(
@@ -61,24 +62,15 @@ class _NavState extends State<Nav> {
             label: 'Settings',
             ),
 
-            BottomNavigationBarItem(
-            icon: Icon(Icons.data_array),                             // index 3
-            label: 'TestData',
-            ),
-
 
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white38,
+        selectedItemColor: Colors.black,
         onTap: _onItemTap,
 
 
         
         ),
-
-
-
-
       );     
   }
 }

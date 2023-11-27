@@ -3,6 +3,7 @@ import 'package:g_p/format/LotLayout.dart';
 import 'package:flexible/flexible.dart';
 import 'package:g_p/pages/dataTesting.dart';
 
+
 class hotWheels extends StatelessWidget {
    hotWheels({required this.booleanParkingDataList});
 
@@ -13,11 +14,14 @@ class hotWheels extends StatelessWidget {
      parkingStalls: [],
    );
 
-   Future<ParkingLot> futureParkingLot = ParkingLot().setupDetailed();
+   Future<ParkingLot> futureParkingLot = ParkingLot().setupDetailed1();
 
    double imageHeight = 1080;
    double imageWidth = 1920;
    int rotation = 0;
+
+   int countAvailable = 0;
+   int countOccupied = 0;
 
    
    List<bool> booleanParkingDataList = [];
@@ -27,23 +31,34 @@ class hotWheels extends StatelessWidget {
    @override
  Widget build(BuildContext context) {
 
+
      if (MediaQuery.of(context).orientation == Orientation.portrait ){
        rotation = 0;
      }else{
        rotation = 1;
      }
 
+     for (bool value in booleanParkingDataList) {
+      if (value) {
+        // true
+        countAvailable++;
+      } else {
+        countOccupied++;
+      }
+     }
+
     return Scaffold(
         resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.black12,
-        title: Text('CHW lot1')
+        title: Text('Hot Wheels Lot')
       ),
        //
        body: SafeArea(
                 child: Column(
 
                   children: [
+
 
                    Container(
                      child: FutureBuilder<ParkingLot>(
@@ -63,7 +78,12 @@ decoration: BoxDecoration(
                                child:RotatedBox(
                                  quarterTurns: rotation,
                                  child: CustomPaint(size: Size(imageWidth, imageHeight),
-                                   child: Image.network(parkingLot!.lotURL),// Set the size as per your image dimensions
+                                   child: Image.network(
+                        'https://storage.googleapis.com/getparked/HotWheelsLot1.JPG',
+                        fit: BoxFit.fitHeight,
+                        
+      
+                      ),
                                    foregroundPainter: RectanglePainter(
                                      parkingLot!.parkingStalls,
                                      imageWidth,
@@ -86,33 +106,36 @@ decoration: BoxDecoration(
 
 
 
- Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8, 50, 8, 8),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.black26,
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                      ),
 
-                      const Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Parking Lot Availability',
-                            style:TextStyle(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 1,
-                                ),
-                          ),
+
+              
+
                           SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 24, 0, 8),
+                                  child: Text(
+                                    'Parking Lot Availability',
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                          fontFamily: 'Readex Pro',
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+
+SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -135,7 +158,7 @@ decoration: BoxDecoration(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 8, 0, 8),
                                   child: Text(
-                                    '50',
+                                    '$countAvailable',
                                     style: TextStyle(
                                           fontFamily: 'Readex Pro',
                                           color: Color(0xFF5AEF39),
@@ -166,7 +189,7 @@ decoration: BoxDecoration(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 8, 0, 8),
                                   child: Text(
-                                    '30',
+                                    '$countOccupied',
                                     style: TextStyle(
                                           fontFamily: 'Readex Pro',
                                           color: Color(0xFFEF393C),
@@ -212,11 +235,11 @@ decoration: BoxDecoration(
                           ),
                   ],
                   ),
-                )
-                  ]
-                ),
+                
        )
                 );
+       
+                
        
   }
 }

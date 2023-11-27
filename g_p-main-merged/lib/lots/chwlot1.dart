@@ -54,6 +54,8 @@ class chwlot1 extends StatelessWidget {
         title: Text('CHW lot1')
       ),
        //
+
+       
        body: SafeArea(
                 child: Column(
 
@@ -95,38 +97,37 @@ decoration: BoxDecoration(
                        },
                      ),
                    ),
-
-
-
-
-
-
- Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8, 50, 8, 8),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.black26,
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                      ),
-
-                      Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Parking Lot Availability',
-                            style:TextStyle(
-                                  fontFamily: 'Readex Pro',
-                                  letterSpacing: 1,
+                   SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 24, 0, 8),
+                                  child: Text(
+                                    'Parking Lot Availability',
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                          fontFamily: 'Readex Pro',
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                  ),
                                 ),
+                              ],
+                            ),
                           ),
+
+
+
+
+
+
+
+
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
@@ -228,10 +229,10 @@ decoration: BoxDecoration(
                   ],
                   ),
                 )
-                  ]
-                ),
-       )
+    
                 );
+       
+                
        
   }
 }
