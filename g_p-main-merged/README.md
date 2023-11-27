@@ -25,7 +25,7 @@ flutter pub get
 
 
 ## Running the app 
-Once the dependencies are installed, you can run your Flutter app using:
+Once the dependencies are installed, you can run the GET PARKED app using:
 ```
 flutter run
 ```
