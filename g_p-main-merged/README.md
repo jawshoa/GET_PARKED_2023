@@ -26,7 +26,7 @@ Install dependencies
 flutter pub get
 ```
 
-#Running the app 
+##Running the app 
 Once the dependencies are installed, you can run your Flutter app using:
 ```
 flutter run
