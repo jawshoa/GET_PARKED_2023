@@ -1,12 +1,11 @@
-# g_p
+# GET PARKED 2023
 
-A new Flutter project.
+Visual Studio Code for GET PARKED Mobile Andriod Application
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+GET PARKED 2023 Dependecies
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
