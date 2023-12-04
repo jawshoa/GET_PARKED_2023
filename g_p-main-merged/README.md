@@ -1,16 +1,39 @@
-# g_p
+# GET PARKED 2023
 
-A new Flutter project.
+Visual Studio Code for GET PARKED Mobile Andriod Application
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Installation
 
-A few resources to get you started if this is your first Flutter project:
+Installing the required packages for GET PARKED 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+bash git clone https://github.com/jawshoa/get_parked_2023.git
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+Navigate to the project directory:
+```
+cd g_p-main-merged
+```
+
+Install dependencies
+```
+flutter pub clean
+```
+
+```
+flutter pub get
+```
+
+```
+flutter pub run flutter_native_splash:create
+```
+
+
+## Running the app 
+Once the dependencies are installed, you can run the GET PARKED app using:
+```
+flutter run
+```

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 
 
@@ -38,6 +40,7 @@ class cbalot1 extends StatelessWidget {
                         ),
                       ),
                     ),
+                    
 
                     Padding(
           padding: EdgeInsets.all(8),
@@ -60,6 +63,7 @@ class cbalot1 extends StatelessWidget {
                     letterSpacing: 1,
                   ),
                 ),
+                
                 buildAvailabilityRow('Available:', countAvailable, Color(0xFF5AEF39)),
                 buildAvailabilityRow('Occupied:', countOccupied, Color(0xFFEF393C)),
                 buildAvailabilityRow('Handicapped:', 5, Colors.blueGrey),

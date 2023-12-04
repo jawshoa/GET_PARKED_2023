@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:g_p/format/LotLayout.dart';
 import 'package:flexible/flexible.dart';
 import 'package:g_p/pages/dataTesting.dart';
+import 'package:get_it/get_it.dart';
+
+
 
 
 class chwlot1 extends StatelessWidget {
@@ -46,6 +49,7 @@ class chwlot1 extends StatelessWidget {
         countOccupied++;
       }
      }
+
 
     return Scaffold(
         resizeToAvoidBottomInset: false,

@@ -50,7 +50,8 @@ dependencies:
   ini: '>=1.0.0'
   test: '>=0.12.0'
   introduction_screen: ^3.1.12
-  riverpod: ^2.4.8
+  riverpod: ^2.4.9
+  get_it: ^7.2.0
 
 
   
@@ -65,39 +66,39 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.0+1
 
   flutter_launcher_icons: ^0.13.1
 
   flutter_native_splash: ^2.3.6
 
 flutter_native_splash:
-  color: "#000000"
   image: assets/icons/logo2.png
+  color: "#000000"
+  
 
 
 flutter_launcher_icons:
 
   android: "launcher_icon"
-  ios: true
-  image_path: "assets/icons/playstore.png"
-  adaptive_icon_foreground: "assets/icons/playstore.png"
-  icon_size: 48
+  image_path: "assets/icons/logo.png"
+  adaptive_icon_foreground: "assets/icons/logo.png"
+  min_sdk_android: 21
 
   web:
     generate: true
-    image_path: "assets/icons/GET_PARKED.png"
+    image_path: "assets/icons/logo.png"
     background_color: "#hexcode"
     theme_color: "#hexcode"
 
   windows:
     generate: true
-    image_path: "assets/icons/GET_PARKED.png"
+    image_path: "assets/icons/logo.png"
     icon_size: 48 # min:48, max:256, default: 48
 
   macos:
     generate: true
-    image_path: "assets/icons/GET_PARKED.png"
+    image_path: "assets/icons/logo.png"
 
 
 

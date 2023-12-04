@@ -37,8 +37,8 @@ class _TTNDataPageState extends State<TTNDataPage> {
 
   final controller = TextEditingController();
   List<int> binaryList = [];
-  //List<bool> booleanParkingDataList = [true,];
-  List<bool> booleanParkingDataList= [true, true, true, true,true,true,true, true, true, true, true,true,true, true,true,true,true,true,true,true,true,true,true,true,true,true,];
+
+  List<bool> booleanParkingDataList= [];
 
   List<bool> getBooleanParkingDataList() {
     return booleanParkingDataList;
@@ -178,7 +178,7 @@ class _TTNDataPageState extends State<TTNDataPage> {
       binaryList =
           fourBitBinary.split('').map((char) => int.parse(char)).toList();
 
-      List<bool> booleanParkingDataList =
+      booleanParkingDataList =
           binaryList.map((int value) => value == 1).toList();
 
 
@@ -277,6 +277,9 @@ class _TTNDataPageState extends State<TTNDataPage> {
             onPressed: () {
               print('Binary List Values for Parking Availability: $binaryList');
 
+            
+
+
               print(
                   'Boolean List Values for Parking Availability: $booleanParkingDataList');
                   
@@ -313,7 +316,7 @@ class _TTNDataPageState extends State<TTNDataPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(33),
                       child: Image.network(
-                        'https://storage.googleapis.com/getparked/HotWheelsLot1.JPG',
+                        'https://storage.googleapis.com/getparked/HotWheelsLot1.jpg',
                         width: 410,
                         height: 141,
                         fit: BoxFit.fitWidth,

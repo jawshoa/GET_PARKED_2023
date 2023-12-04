@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:g_p/format/LotLayout.dart';
 import 'package:flexible/flexible.dart';
 import 'package:g_p/pages/dataTesting.dart';
+import 'package:riverpod/riverpod.dart';
 
 
 class hotWheels extends StatelessWidget {
@@ -79,7 +80,7 @@ decoration: BoxDecoration(
                                  quarterTurns: rotation,
                                  child: CustomPaint(size: Size(imageWidth, imageHeight),
                                    child: Image.network(
-                        'https://storage.googleapis.com/getparked/HotWheelsLot1.JPG',
+                        'https://storage.googleapis.com/getparked/HotWheelsLot1.jpg',
                         fit: BoxFit.fitHeight,
                         
       
